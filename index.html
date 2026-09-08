@@ -1,0 +1,54 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Portfólio de Ana Silva, desenvolvedora front-end." />
+    <title>Ana Silva | Desenvolvedora Front-end</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=DM+Mono&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <header class="site-header">
+      <a class="brand" href="#inicio" aria-label="Início">AS<span>°</span></a>
+      <nav aria-label="Navegação principal">
+        <a href="#sobre">Sobre</a><a href="#projetos">Projetos</a><a href="#contato">Contato</a>
+      </nav>
+      <button class="theme-toggle" type="button" aria-label="Alternar tema"><span aria-hidden="true">◐</span></button>
+    </header>
+
+    <main>
+      <section class="hero" id="inicio">
+        <p class="eyebrow">Olá, eu sou Ana —</p>
+        <h1>Construo experiências <em>digitais</em> que fazem sentido.</h1>
+        <p class="hero-copy">Desenvolvedora front-end baseada em São Paulo, transformando ideias complexas em produtos simples, acessíveis e memoráveis.</p>
+        <div class="hero-actions"><a class="button" href="#projetos">Ver projetos <span>↘</span></a><a class="text-link" href="#contato">Vamos conversar</a></div>
+        <div class="scroll-note"><span></span> role para explorar</div>
+      </section>
+
+      <section class="about section" id="sobre">
+        <p class="section-label">01 / SOBRE MIM</p>
+        <div><h2>Código com intenção,<br />design com <em>clareza.</em></h2><p>Há mais de cinco anos, uno tecnologia e pensamento de produto para criar interfaces que as pessoas gostam de usar. Acredito que os melhores produtos digitais surgem do equilíbrio entre estética, estratégia e empatia.</p><div class="skills"><span>React</span><span>TypeScript</span><span>Next.js</span><span>UI Design</span><span>Acessibilidade</span></div></div>
+      </section>
+
+      <section class="projects section" id="projetos">
+        <div class="section-heading"><p class="section-label">02 / PROJETOS SELECIONADOS</p><h2>Trabalho recente.</h2></div>
+        <div class="filters" aria-label="Filtrar projetos"><button class="active" data-filter="all">Todos</button><button data-filter="web">Web</button><button data-filter="mobile">Mobile</button><button data-filter="design">Design</button></div>
+        <div class="project-grid">
+          <article class="project-card featured" data-category="web"><div class="project-visual coral"><span>01</span><strong>natura</strong><i>✦</i></div><div class="project-info"><div><h3>Natura Digital</h3><p>E-commerce · Web</p></div><a href="#contato" aria-label="Ver projeto Natura Digital">↗</a></div></article>
+          <article class="project-card" data-category="mobile"><div class="project-visual blue"><span>02</span><strong>pulse<br />health</strong><i>◌</i></div><div class="project-info"><div><h3>Pulse Health</h3><p>Bem-estar · Mobile</p></div><a href="#contato" aria-label="Ver projeto Pulse Health">↗</a></div></article>
+          <article class="project-card" data-category="design"><div class="project-visual yellow"><span>03</span><strong>modular</strong><i>▦</i></div><div class="project-info"><div><h3>Modular Studio</h3><p>Identidade · Design</p></div><a href="#contato" aria-label="Ver projeto Modular Studio">↗</a></div></article>
+        </div>
+      </section>
+
+      <section class="contact section" id="contato">
+        <p class="section-label">03 / CONTATO</p>
+        <div class="contact-grid"><div><h2>Tem um projeto<br />em mente?</h2><p>Estou disponível para trabalhos freelance e colaborações criativas.</p><a class="email" href="mailto:ola@anasilva.dev">ola@anasilva.dev <span>↗</span></a></div><form id="contact-form"><label for="name">Seu nome</label><input id="name" name="name" required placeholder="Como posso te chamar?" /><label for="message">Conte-me sobre o projeto</label><textarea id="message" name="message" required placeholder="Uma breve descrição já é um ótimo começo."></textarea><button class="button" type="submit">Enviar mensagem <span>↗</span></button><p class="form-status" aria-live="polite"></p></form></div>
+      </section>
+    </main>
+    <footer><a class="brand" href="#inicio">AS<span>°</span></a><p>© 2024 Ana Silva. Feito com cuidado.</p><div><a href="#">LinkedIn</a><a href="#">GitHub</a></div></footer>
+    <script src="script.js"></script>
+  </body>
+</html>
