@@ -13,7 +13,7 @@ document.querySelectorAll('[data-filter]').forEach((button) => {
     document.querySelector('.filters .active').classList.remove('active');
     button.classList.add('active');
     document.querySelectorAll('.project-card').forEach((card) => {
-      card.hidden = button.dataset.filter !== 'all' && card.dataset.category !== button.dataset.filter;
+      card.hidden = button.dataset.filter !== 'all' && card.dataset.filter !== button.dataset.filter && card.dataset.category !== button.dataset.filter;
     });
   });
 });
@@ -25,6 +25,6 @@ document.querySelector('#contact-form').addEventListener('submit', (event) => {
   const message = form.elements.message.value.trim();
   const status = form.querySelector('.form-status');
   if (!name || !message) return;
-  status.textContent = `Obrigada, ${name}! Vou retornar em breve.`;
+  status.textContent = `Obrigado, ${name}! Sua mensagem foi registrada.`;
   form.reset();
 });
