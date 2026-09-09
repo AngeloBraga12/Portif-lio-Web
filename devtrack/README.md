@@ -10,8 +10,9 @@ Dashboard responsivo construído para demonstrar desenvolvimento front-end moder
 - Estados de carregamento, sucesso e erro.
 - Busca por usuário do GitHub.
 - Interface responsiva para desktop e mobile.
+- Integração com API REST.
 - Links externos seguros.
-- Build com Vite.
+- Build configurado com Vite.
 
 ## Stack
 
@@ -33,3 +34,15 @@ npm run build
 ## Objetivo
 
 Projeto de portfólio criado para demonstrar integração com API REST, tratamento de estados, tipagem, responsividade e organização de uma aplicação front-end moderna.
+
+## Repositório
+
+O projeto está integrado ao portfólio principal em [`/devtrack`](../devtrack).
+
+## Autor
+
+Angelo Braga
+
+- Portfólio: https://portifolio-angelobraga.netlify.app/
+- LinkedIn: https://www.linkedin.com/in/angelo-braga-5747b4192/
+- GitHub: https://github.com/AngeloBraga12
