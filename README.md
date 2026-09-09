@@ -23,9 +23,10 @@ O projeto apresenta minha trajetória, competências e trabalhos práticos em um
 
 ## Projetos apresentados
 
-- **Portfólio Web**: este próprio projeto.
-- **Hambúrgueria**: interface web responsiva para apresentação de produtos.
-- **Login**: projeto de estudo focado em interface de login.
+- **E-vent**: dashboard front-end para organização e acompanhamento de eventos, desenvolvido com React e TypeScript.
+- **Portfólio React**: versão em React, TypeScript e Material UI.
+- **Hambúrgueria**: interface web responsiva para apresentação de produtos e carrinho.
+- **Login**: projeto de estudo focado em interface de login/cadastro.
 - **TCC**: projeto acadêmico relacionado ao desenvolvimento Web.
 
 ## Portfólio online
