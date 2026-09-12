@@ -56,7 +56,7 @@ Este snapshot é uma aplicação web estática. Para uma prévia rápida, abra `
 
 O projeto de produção está hospedado no Netlify. O objetivo da organização atual é manter o GitHub como fonte de histórico e, após a sincronização do código de produção, estabelecer o fluxo GitHub → Netlify para que commits futuros gerem novos deploys automaticamente.
 
-O fluxo Git-based do Netlify permite que alterações enviadas ao repositório conectado acionem novos builds e deploys. citeturn0search0turn0search1
+O fluxo Git-based do Netlify permite que alterações enviadas ao repositório conectado acionem novos builds e deploys automaticamente.
 
 ## Autor
 
