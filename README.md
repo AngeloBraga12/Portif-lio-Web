@@ -2,9 +2,15 @@
 
 Portfólio profissional de Angelo Braga, Técnico em Informática com foco atual em Desenvolvimento Web e Front-end.
 
-O projeto apresenta minha trajetória, competências e trabalhos práticos em uma interface responsiva.
+> **Produção:** https://portifolio-angelobraga.netlify.app/
+>
+> A versão publicada no Netlify é a referência visual e funcional atual. Este repositório mantém a base versionada do projeto até a sincronização completa do código-fonte mais recente.
 
-## Tecnologias utilizadas
+## Objetivo
+
+Apresentar de forma direta a trajetória profissional, competências e projetos de Angelo Braga, com uma interface responsiva e orientada a recrutadores e clientes.
+
+## Tecnologias
 
 - HTML5
 - CSS3
@@ -12,7 +18,7 @@ O projeto apresenta minha trajetória, competências e trabalhos práticos em um
 - Responsive Web Design
 - Fundamentos de UI/UX
 
-## Funcionalidades
+## Funcionalidades da versão versionada
 
 - Navegação por seções
 - Tema claro e escuro
@@ -23,20 +29,38 @@ O projeto apresenta minha trajetória, competências e trabalhos práticos em um
 
 ## Projetos apresentados
 
-- **E-vent**: dashboard front-end para organização e acompanhamento de eventos, desenvolvido com React e TypeScript.
-- **Portfólio React**: versão em React, TypeScript e Material UI.
-- **Hambúrgueria**: interface web responsiva para apresentação de produtos e carrinho.
-- **Login**: projeto de estudo focado em interface de login/cadastro.
-- **TCC**: projeto acadêmico relacionado ao desenvolvimento Web.
+- **E-vent:** dashboard front-end para organização e acompanhamento de eventos, desenvolvido com React e TypeScript.
+- **Portfólio React:** versão em React, TypeScript e Material UI.
+- **Hambúrgueria:** interface web responsiva para apresentação de produtos e carrinho.
+- **Login:** projeto de estudo focado em interface de autenticação.
+- **TCC:** projeto acadêmico relacionado ao desenvolvimento Web.
 
-## Portfólio online
+## Estrutura
 
-https://portifolio-angelobraga.netlify.app/
+```text
+.
+├── .github/
+├── devtrack/
+├── index.html
+├── script.js
+├── styles.css
+├── .gitignore
+└── README.md
+```
+
+## Desenvolvimento local
+
+Este snapshot é uma aplicação web estática. Para uma prévia rápida, abra `index.html` em um navegador ou utilize um servidor local estático.
+
+## Deploy
+
+O projeto de produção está hospedado no Netlify. O objetivo da organização atual é manter o GitHub como fonte de histórico e, após a sincronização do código de produção, estabelecer o fluxo GitHub → Netlify para que commits futuros gerem novos deploys automaticamente.
+
+O fluxo Git-based do Netlify permite que alterações enviadas ao repositório conectado acionem novos builds e deploys. citeturn0search0turn0search1
 
 ## Autor
 
-**Angelo Braga**
-
+**Angelo Braga**  
 Técnico em Informática · Desenvolvimento Web / Front-end
 
 - GitHub: https://github.com/AngeloBraga12
