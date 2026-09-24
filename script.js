@@ -1,4 +1,5 @@
 const themeToggle = document.querySelector('.theme-toggle');
+const safeThemeToggle = themeToggle instanceof HTMLButtonElement ? themeToggle : null;
 const preferredTheme = localStorage.getItem('theme');
 
 if (preferredTheme === 'dark') {
@@ -6,14 +7,15 @@ if (preferredTheme === 'dark') {
 }
 
 function updateThemeButton() {
+  if (!safeThemeToggle) return;
   const isDark = document.body.classList.contains('dark');
-  themeToggle.setAttribute('aria-label', isDark ? 'Ativar tema claro' : 'Ativar tema escuro');
-  themeToggle.setAttribute('aria-pressed', String(isDark));
+  safeThemeToggle.setAttribute('aria-label', isDark ? 'Ativar tema claro' : 'Ativar tema escuro');
+  safeThemeToggle.setAttribute('aria-pressed', String(isDark));
 }
 
 updateThemeButton();
 
-themeToggle.addEventListener('click', () => {
+safeThemeToggle?.addEventListener('click', () => {
   document.body.classList.toggle('dark');
   const isDark = document.body.classList.contains('dark');
   localStorage.setItem('theme', isDark ? 'dark' : 'light');
@@ -43,7 +45,7 @@ filterButtons.forEach((button) => {
 
 const contactForm = document.querySelector('#contact-form');
 
-contactForm.addEventListener('submit', (event) => {
+contactForm?.addEventListener('submit', (event) => {
   event.preventDefault();
 
   const form = event.currentTarget;
