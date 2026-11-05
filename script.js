@@ -57,24 +57,36 @@ if ('IntersectionObserver' in window && !reduceMotion.matches) {
 }
 
 const parallaxItems = document.querySelectorAll('[data-parallax]');
-if (parallaxItems.length && !reduceMotion.matches) {
+const scrollProgress = document.querySelector('.scroll-progress');
+if (scrollProgress || (parallaxItems.length && !reduceMotion.matches)) {
   let framePending = false;
-  const updateParallax = () => {
-    const scrollY = window.scrollY;
-    parallaxItems.forEach((item) => {
-      const speed = Number(item.dataset.parallax) || 0;
-      const offset = Math.min(26, scrollY * speed);
-      item.style.setProperty('--parallax-y', `${offset.toFixed(1)}px`);
-    });
+  const updateScrollEffects = () => {
+    const scrollableHeight = document.documentElement.scrollHeight - window.innerHeight;
+    const progress = scrollableHeight > 0 ? (window.scrollY / scrollableHeight) * 100 : 0;
+    scrollProgress?.style.setProperty('--scroll-progress', `${Math.min(100, progress).toFixed(2)}%`);
+
+    if (!reduceMotion.matches) {
+      parallaxItems.forEach((item) => {
+        const bounds = item.getBoundingClientRect();
+        const distanceFromCenter = window.innerHeight / 2 - (bounds.top + bounds.height / 2);
+        const speed = Number(item.dataset.parallax) || 0;
+        const offset = Math.max(-54, Math.min(54, distanceFromCenter * speed));
+        item.style.setProperty('--parallax-y', `${offset.toFixed(1)}px`);
+      });
+    }
     framePending = false;
   };
 
-  window.addEventListener('scroll', () => {
+  const queueScrollEffects = () => {
     if (framePending) return;
     framePending = true;
-    window.requestAnimationFrame(updateParallax);
-  }, { passive: true });
-  updateParallax();
+    window.requestAnimationFrame(updateScrollEffects);
+  };
+
+  window.addEventListener('scroll', queueScrollEffects, { passive: true });
+  window.addEventListener('resize', queueScrollEffects, { passive: true });
+  window.addEventListener('load', queueScrollEffects, { once: true });
+  updateScrollEffects();
 }
 
 const contactForm = document.querySelector('#contact-form');
