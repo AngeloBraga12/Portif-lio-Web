@@ -156,6 +156,27 @@ a.project-visual:hover { filter: saturate(1.15); transform: translateY(-5px); }
 .github-cta { width: fit-content; margin: 75px 0 0 20%; padding: 15px 0; }
 .github-cta span { color: var(--accent-strong); font-size: 16px; }
 
+.js .horizontal-section.is-horizontal { width: 100%; max-width: none; min-height: 100svh; margin: 0; padding: 0; overflow: clip; }
+.js .horizontal-section.is-horizontal .horizontal-pin { height: 100svh; min-height: 760px; padding: clamp(90px, 10vh, 125px) clamp(24px, 7vw, 110px) clamp(34px, 5vh, 62px); display: grid; grid-template-rows: auto auto minmax(0, 1fr) auto auto; gap: 12px; position: sticky; top: 0; overflow: hidden; }
+.js .horizontal-section.is-horizontal .work-header, .js .horizontal-section.is-horizontal .gallery-header { margin: 0 0 0 12%; gap: 5vw; }
+.js .horizontal-section.is-horizontal .work-header h2, .js .horizontal-section.is-horizontal .gallery-header h2 { font-size: clamp(42px, 5vw, 72px); }
+.js .horizontal-section.is-horizontal .filters { margin: 0 0 0 12%; }
+.js .horizontal-section.is-horizontal .horizontal-window { min-width: 0; min-height: 0; display: flex; align-items: center; overflow: hidden; outline-offset: -3px; }
+.js .horizontal-section.is-horizontal .horizontal-track { width: max-content; max-width: none; margin: 0; display: flex; align-items: stretch; gap: clamp(20px, 2.5vw, 38px); position: relative; transform: translate3d(var(--horizontal-offset, 0px), 0, 0); will-change: transform; }
+.js .horizontal-section.is-horizontal .project-card { width: min(38vw, 500px); flex: 0 0 min(38vw, 500px); }
+.js .horizontal-section.is-horizontal .project-featured { width: min(42vw, 540px); margin: 0; flex-basis: min(42vw, 540px); }
+.js .horizontal-section.is-horizontal .project-wide { display: block; }
+.js .horizontal-section.is-horizontal .project-visual, .js .horizontal-section.is-horizontal .project-featured .project-visual { min-height: 0; aspect-ratio: 1.52; }
+.project-thumb { width: 100%; height: 100%; object-fit: cover; position: absolute; z-index: 0; inset: 0; transition: transform .45s cubic-bezier(.2,.8,.2,1), filter .3s ease; }
+.project-visual:before, .project-visual:after { z-index: 1; }
+.visual-index, .project-visual-label, .project-domain, .visual-arrow { z-index: 2; }
+a.project-visual:hover .project-thumb { transform: scale(1.035); filter: saturate(1.08); }
+.js .horizontal-section.is-horizontal .github-cta { margin: 0 0 0 12%; padding: 4px 0; }
+.horizontal-cue { min-height: 16px; margin: 0; display: flex; align-items: center; gap: 14px; color: var(--muted); font: 8px var(--mono); letter-spacing: .12em; text-transform: uppercase; }
+.cue-mobile { display: none; }
+.horizontal-meter { width: 100px; height: 1px; display: inline-block; overflow: hidden; position: relative; background: var(--line); }
+.horizontal-meter:after { width: var(--horizontal-progress, 0%); height: 100%; content: ''; display: block; background: var(--gold); transition: width .12s linear; }
+
 .gallery { max-width: none; overflow: hidden; }
 .gallery-header { margin-left: 20%; margin-bottom: 66px; }
 .gallery-header h2 em { color: var(--gold); }
@@ -171,6 +192,14 @@ a.project-visual:hover { filter: saturate(1.15); transform: translateY(-5px); }
 .gallery-landscape img, .gallery-video video { aspect-ratio: 16 / 10; }
 .gallery-grid figcaption { padding-top: 10px; color: var(--muted); font: 8px var(--mono); letter-spacing: .11em; }
 .gallery-video video { border: 1px solid var(--line); }
+.js .horizontal-section.is-horizontal .gallery-header { margin-bottom: 0; }
+.js .horizontal-section.is-horizontal .gallery-grid { max-width: none; margin: 0; display: flex; align-items: center; gap: clamp(14px, 2vw, 28px); }
+.js .horizontal-section.is-horizontal .gallery-grid figure { width: min(25vw, 310px); flex: 0 0 min(25vw, 310px); margin: 0; }
+.js .horizontal-section.is-horizontal .gallery-grid .gallery-landscape, .js .horizontal-section.is-horizontal .gallery-grid .gallery-video { width: min(34vw, 430px); flex-basis: min(34vw, 430px); }
+
+@media (min-width: 781px) {
+  .js .horizontal-section.is-horizontal .work-header > p, .js .horizontal-section.is-horizontal .gallery-header > p { max-width: 310px; font-size: 10px; }
+}
 
 .contact { max-width: none; overflow: hidden; background-image: radial-gradient(ellipse at 78% 12%, #302534 0, transparent 36%); }
 .contact:before { content: 'CONTATO'; position: absolute; left: -1vw; bottom: -5vw; color: color-mix(in srgb, var(--ink) 4%, transparent); font: 23vw/.9 var(--display); letter-spacing: -.08em; pointer-events: none; }
@@ -297,6 +326,27 @@ footer > div:first-child p { margin: 12px 0 0; color: var(--muted); font: 8px va
   footer { grid-template-columns: 1fr; gap: 28px; padding: 52px 20px 24px; }
   .footer-socials { max-width: 270px; padding: 0; }
   .copyright { grid-column: auto; }
+}
+@media (max-width: 780px) {
+  .js .horizontal-section { width: 100%; max-width: none; height: auto !important; min-height: 0; margin: 0; padding: 0; overflow: visible; }
+  .js .horizontal-section .horizontal-pin { width: 100%; height: auto; min-height: 0; padding: 96px 20px 58px; display: block; position: relative; overflow: visible; }
+  .js .horizontal-section .section-number { top: 32px; right: 20px; }
+  .js .horizontal-section .work-header, .js .horizontal-section .gallery-header { display: block; margin: 0 0 32px; }
+  .js .horizontal-section .work-header > p, .js .horizontal-section .gallery-header > p { margin-top: 20px; }
+  .js .horizontal-section .filters { margin: 0 0 18px; }
+  .js .horizontal-section .horizontal-window { width: calc(100% + 20px); min-height: 0; margin-right: -20px; padding: 0 20px 14px 0; display: block; overflow-x: auto; overflow-y: hidden; overscroll-behavior-x: contain; scroll-snap-type: x mandatory; scrollbar-width: thin; scrollbar-color: var(--accent) var(--line); }
+  .js .horizontal-section .horizontal-track { width: max-content; max-width: none; margin: 0; padding-right: 20px; display: flex; align-items: stretch; gap: 16px; position: relative; transform: none !important; will-change: auto; }
+  .js .horizontal-section .project-card, .js .horizontal-section .project-featured { width: min(82vw, 390px); flex: 0 0 min(82vw, 390px); margin: 0; scroll-snap-align: start; }
+  .js .horizontal-section .project-wide { display: block; }
+  .js .horizontal-section .project-visual, .js .horizontal-section .project-featured .project-visual { min-height: 0; aspect-ratio: 1.4; }
+  .js .horizontal-section .github-cta { margin: 28px 0 0; }
+  .js .horizontal-section .gallery-header { margin-bottom: 32px; }
+  .js .horizontal-section .gallery-grid figure, .js .horizontal-section .gallery-grid .gallery-landscape, .js .horizontal-section .gallery-grid .gallery-video { width: min(78vw, 390px); flex: 0 0 min(78vw, 390px); margin: 0; scroll-snap-align: start; }
+  .js .horizontal-section .gallery-grid .gallery-landscape, .js .horizontal-section .gallery-grid .gallery-video { width: min(86vw, 460px); flex-basis: min(86vw, 460px); }
+  .horizontal-cue { margin-top: 15px; }
+  .cue-desktop { display: none; }
+  .cue-mobile { display: inline; }
+  .horizontal-meter { width: 64px; }
 }
 @media (prefers-reduced-motion: reduce) {
   html { scroll-behavior: auto; }

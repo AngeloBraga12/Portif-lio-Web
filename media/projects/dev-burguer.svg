@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 600" role="img" aria-labelledby="title desc">
+  <title id="title">Miniatura do Dev Burguer</title><desc id="desc">Cardápio digital escuro com ilustração de hambúrguer e detalhes dourados.</desc>
+  <defs><linearGradient id="bg" x2="1" y2="1"><stop stop-color="#28123b"/><stop offset="1" stop-color="#0e0a14"/></linearGradient><linearGradient id="bun" x2="0" y2="1"><stop stop-color="#f6c968"/><stop offset="1" stop-color="#b77534"/></linearGradient></defs>
+  <rect width="1000" height="600" fill="url(#bg)"/><path d="M0 510Q250 440 500 510t500 0v90H0Z" fill="#170e20"/>
+  <rect x="58" y="45" width="884" height="510" rx="18" fill="none" stroke="#ffffff" stroke-opacity=".12"/>
+  <text x="94" y="112" fill="#f0e9f7" font-family="Arial,sans-serif" font-size="22" font-weight="700" letter-spacing="5">DEV BURGUER</text><circle cx="112" cy="170" r="5" fill="#d4b66d"/><text x="132" y="177" fill="#d4b66d" font-family="Arial,sans-serif" font-size="13" letter-spacing="3">CARDÁPIO DIGITAL</text>
+  <text x="94" y="267" fill="#f4edf9" font-family="Georgia,serif" font-size="64">Feito na</text><text x="94" y="337" fill="#c15eff" font-family="Georgia,serif" font-size="64" font-style="italic">brasa.</text>
+  <rect x="96" y="385" width="174" height="44" rx="22" fill="#d4b66d"/><text x="124" y="413" fill="#21172a" font-family="Arial,sans-serif" font-size="14" font-weight="700" letter-spacing="2">VER CARDÁPIO</text>
+  <ellipse cx="690" cy="487" rx="187" ry="27" fill="#000" fill-opacity=".32"/><path d="M527 376q16-116 163-116t164 116Z" fill="url(#bun)"/><path d="M536 379h307q-12 25-31 35H566q-19-13-30-35Z" fill="#5a2a24"/><path d="M544 407q145 30 292 0l-18 31q-128 35-257 0Z" fill="#df623d"/><path d="M563 438q128 29 255 0l-16 30q-111 27-222 0Z" fill="#6c381f"/><path d="M580 468q111 21 222 0q-18 46-111 49q-93-3-111-49Z" fill="url(#bun)"/><circle cx="611" cy="291" r="5" fill="#fff0bd"/><circle cx="674" cy="276" r="5" fill="#fff0bd"/><circle cx="752" cy="289" r="5" fill="#fff0bd"/><path d="M558 379q130 22 252 0" fill="none" stroke="#79a44b" stroke-width="10" stroke-linecap="round"/>
+</svg>

@@ -23,6 +23,8 @@ Apresentar de forma direta a trajetória profissional, competências e projetos 
 - Navegação responsiva por seções
 - Tema claro/escuro com preferência salva no navegador
 - Filtros por Web, React, Estudo e Acadêmico
+- Revelação horizontal de projetos e galeria conforme a rolagem; trilhos com gesto horizontal em telas menores
+- Miniaturas SVG próprias para cada projeto
 - Revelações suaves e parallax decorativo, com suporte a `prefers-reduced-motion`
 - Galeria local de fotos e vídeos
 - Formulário demonstrativo com validação no navegador (sem envio ao servidor)
