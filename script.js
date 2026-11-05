@@ -1,41 +1,37 @@
 const themeToggle = document.querySelector('.theme-toggle');
-const safeThemeToggle = themeToggle instanceof HTMLButtonElement ? themeToggle : null;
-const preferredTheme = localStorage.getItem('theme');
+const savedTheme = localStorage.getItem('theme');
 
-if (preferredTheme === 'dark') {
-  document.body.classList.add('dark');
+if (savedTheme === 'light') {
+  document.body.classList.add('light');
 }
 
 function updateThemeButton() {
-  if (!safeThemeToggle) return;
-  const isDark = document.body.classList.contains('dark');
-  safeThemeToggle.setAttribute('aria-label', isDark ? 'Ativar tema claro' : 'Ativar tema escuro');
-  safeThemeToggle.setAttribute('aria-pressed', String(isDark));
+  if (!(themeToggle instanceof HTMLButtonElement)) return;
+  const isLight = document.body.classList.contains('light');
+  themeToggle.setAttribute('aria-label', isLight ? 'Ativar tema escuro' : 'Ativar tema claro');
+  themeToggle.setAttribute('aria-pressed', String(!isLight));
 }
 
 updateThemeButton();
 
-safeThemeToggle?.addEventListener('click', () => {
-  document.body.classList.toggle('dark');
-  const isDark = document.body.classList.contains('dark');
-  localStorage.setItem('theme', isDark ? 'dark' : 'light');
+themeToggle?.addEventListener('click', () => {
+  const isLight = document.body.classList.toggle('light');
+  localStorage.setItem('theme', isLight ? 'light' : 'dark');
   updateThemeButton();
 });
 
 const filterButtons = document.querySelectorAll('.filters [data-filter]');
-const projectCards = document.querySelectorAll('.project-card');
+const projectCards = document.querySelectorAll('.project-card[data-category]');
 
 filterButtons.forEach((button) => {
-  button.setAttribute('aria-pressed', String(button.classList.contains('active')));
-
   button.addEventListener('click', () => {
+    const filter = button.dataset.filter;
+
     filterButtons.forEach((item) => {
       const active = item === button;
       item.classList.toggle('active', active);
       item.setAttribute('aria-pressed', String(active));
     });
-
-    const filter = button.dataset.filter;
 
     projectCards.forEach((card) => {
       card.hidden = filter !== 'all' && card.dataset.category !== filter;
@@ -43,8 +39,45 @@ filterButtons.forEach((button) => {
   });
 });
 
-const contactForm = document.querySelector('#contact-form');
+const revealItems = document.querySelectorAll('.reveal');
+const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
 
+if ('IntersectionObserver' in window && !reduceMotion.matches) {
+  const revealObserver = new IntersectionObserver((entries, observer) => {
+    entries.forEach((entry) => {
+      if (!entry.isIntersecting) return;
+      entry.target.classList.add('is-visible');
+      observer.unobserve(entry.target);
+    });
+  }, { threshold: 0.12, rootMargin: '0px 0px -35px 0px' });
+
+  revealItems.forEach((item) => revealObserver.observe(item));
+} else {
+  revealItems.forEach((item) => item.classList.add('is-visible'));
+}
+
+const parallaxItems = document.querySelectorAll('[data-parallax]');
+if (parallaxItems.length && !reduceMotion.matches) {
+  let framePending = false;
+  const updateParallax = () => {
+    const scrollY = window.scrollY;
+    parallaxItems.forEach((item) => {
+      const speed = Number(item.dataset.parallax) || 0;
+      const offset = Math.min(26, scrollY * speed);
+      item.style.setProperty('--parallax-y', `${offset.toFixed(1)}px`);
+    });
+    framePending = false;
+  };
+
+  window.addEventListener('scroll', () => {
+    if (framePending) return;
+    framePending = true;
+    window.requestAnimationFrame(updateParallax);
+  }, { passive: true });
+  updateParallax();
+}
+
+const contactForm = document.querySelector('#contact-form');
 contactForm?.addEventListener('submit', (event) => {
   event.preventDefault();
 
@@ -54,7 +87,6 @@ contactForm?.addEventListener('submit', (event) => {
   const status = form.querySelector('.form-status');
 
   if (!name || !message) return;
-
   status.textContent = `Obrigado, ${name}! Este formulário é demonstrativo e não envia dados para um servidor.`;
   form.reset();
 });

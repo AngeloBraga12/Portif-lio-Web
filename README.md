@@ -1,10 +1,10 @@
 # Angelo Braga | Portfólio Web
 
-Portfólio profissional de Angelo Braga, Técnico em Informática com foco atual em Desenvolvimento Web e Front-end.
+Portfólio de Angelo Braga Valeriano — tecnologia, desenvolvimento Web e audiovisual.
 
 > **Produção:** https://portifolio-angelobraga.netlify.app/
 >
-> A versão publicada no Netlify é a referência visual e funcional atual. Este repositório mantém a base versionada do projeto até a sincronização completa do código-fonte mais recente.
+> A versão publicada no Netlify é a referência de conteúdo mais recente. Este repositório mantém a implementação estática em HTML, CSS e JavaScript.
 
 ## Objetivo
 
@@ -20,18 +20,21 @@ Apresentar de forma direta a trajetória profissional, competências e projetos 
 
 ## Funcionalidades da versão versionada
 
-- Navegação por seções
-- Tema claro e escuro
-- Filtro de projetos
-- Layout responsivo
-- Formulário de contato com validação no navegador
-- Links para canais profissionais
+- Navegação responsiva por seções
+- Tema claro/escuro com preferência salva no navegador
+- Filtros por Web, React, Estudo e Acadêmico
+- Revelações suaves e parallax decorativo, com suporte a `prefers-reduced-motion`
+- Galeria local de fotos e vídeos
+- Formulário demonstrativo com validação no navegador (sem envio ao servidor)
+- Links para canais profissionais e projetos publicados
 
 ## Projetos apresentados
 
-- **E-vent:** dashboard front-end para organização e acompanhamento de eventos, desenvolvido com React e TypeScript.
+- **Dev Burguer / Hambúrgueria:** cardápio digital em HTML, Tailwind e JavaScript.
+- **Segurança da Informação:** site educacional em HTML e CSS.
+- **Barbearia:** site institucional em HTML, SCSS e JavaScript.
+- **E-vent:** dashboard front-end para organização e acompanhamento de eventos, desenvolvido com React, TypeScript e Vite.
 - **Portfólio React:** versão em React, TypeScript e Material UI.
-- **Hambúrgueria:** interface web responsiva para apresentação de produtos e carrinho.
 - **Login:** projeto de estudo focado em interface de autenticação.
 - **TCC:** projeto acadêmico relacionado ao desenvolvimento Web.
 
@@ -44,17 +47,18 @@ Apresentar de forma direta a trajetória profissional, competências e projetos 
 ├── index.html
 ├── script.js
 ├── styles.css
+├── media/
 ├── .gitignore
 └── README.md
 ```
 
 ## Desenvolvimento local
 
-Este snapshot é uma aplicação web estática. Para uma prévia rápida, abra `index.html` em um navegador ou utilize um servidor local estático.
+Esta é uma aplicação web estática. Para uma prévia rápida, abra `index.html` em um navegador ou utilize um servidor local estático.
 
 ## Deploy
 
-O projeto de produção está hospedado no Netlify. O objetivo da organização atual é manter o GitHub como fonte de histórico e, após a sincronização do código de produção, estabelecer o fluxo GitHub → Netlify para que commits futuros gerem novos deploys automaticamente.
+O site publicado está hospedado no Netlify. O código deste repositório foi atualizado a partir da versão publicada; confirme a configuração do site no Netlify antes de conectar o fluxo GitHub → Netlify para deploys automáticos.
 
 O fluxo Git-based do Netlify permite que alterações enviadas ao repositório conectado acionem novos builds e deploys automaticamente.
 
